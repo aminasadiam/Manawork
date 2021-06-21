@@ -5,6 +5,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Manawork.Contxet;
+using Manawork.Services;
+using Manawork.Services.Interfaces;
+using Microsoft.AspNetCore.Authentication.Cookies;
 
 namespace Manawork
 {
@@ -29,6 +32,26 @@ namespace Manawork
                 });
                 
             #endregion
+
+            #region IoC
+
+                services.AddTransient<IUserService, UserService>();
+
+            #endregion
+
+            #region Authentication
+
+                services.AddAuthentication(option => {
+                    option.DefaultAuthenticateScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                    option.DefaultSignInScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                    option.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                }).AddCookie(option => {
+                    option.LoginPath = "/User/Login";
+                    option.LogoutPath = "/User/Logout";
+                    option.ExpireTimeSpan = System.TimeSpan.FromDays(15);
+                });
+                
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -49,6 +72,7 @@ namespace Manawork
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

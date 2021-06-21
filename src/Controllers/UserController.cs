@@ -8,6 +8,9 @@ using Microsoft.Extensions.Logging;
 using Manawork.DTOs.Users;
 using Manawork.Services.Interfaces;
 using Manawork.Models.User;
+using System.Security.Claims;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication;
 
 namespace Manawork.Controllers
 {
@@ -25,6 +28,7 @@ namespace Manawork.Controllers
             return View();
         }
 
+        [HttpPost]
         public IActionResult Register(RegisterViewModel model)
         {
             if (!ModelState.IsValid)
@@ -56,6 +60,47 @@ namespace Manawork.Controllers
             _userService.AddUser(user);
 
             return Redirect("/");
+        }
+
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Login(LoginViewModel model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            var user = _userService.LoginUser(model);
+
+            if (user != null)
+            {
+                var claim = new List<Claim>()
+                {
+                    new Claim(ClaimTypes.NameIdentifier, user.UserId.ToString()),
+                    new Claim(ClaimTypes.Name, user.Email)
+                };
+
+                var identity = new ClaimsIdentity(claim, CookieAuthenticationDefaults.AuthenticationScheme);
+                var principal = new ClaimsPrincipal(identity);
+                var properties = new AuthenticationProperties()
+                {
+                    IsPersistent = model.RememberMe
+                };
+
+                HttpContext.SignInAsync(principal, properties);
+
+                return Redirect("/");
+            }
+            else
+            {
+                ModelState.AddModelError("Username", "user not found!");
+                return View(model);
+            }
         }
     }
 }

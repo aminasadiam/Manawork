@@ -3,6 +3,7 @@ using System.Linq;
 using Manawork.Models.User;
 using Manawork.Services.Interfaces;
 using Manawork.Contxet;
+using Manawork.DTOs.Users;
 
 namespace Manawork.Services
 {
@@ -29,6 +30,14 @@ namespace Manawork.Services
         public bool IsUsernameExist(string username)
         {
             return _context.Users.Any(u => u.Username == username);
+        }
+
+        public User LoginUser(LoginViewModel model)
+        {
+            string email = model.Email.ToLower();
+            string pass = model.Password;
+
+            return _context.Users.SingleOrDefault(u => u.Email == email && u.Password == pass);
         }
     }
 }

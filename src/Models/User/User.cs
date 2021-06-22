@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace Manawork.Models.User
@@ -25,5 +26,11 @@ namespace Manawork.Models.User
         
         public DateTime RegisterDate { get; set; }
         public bool IsDelete { get; set; }
+
+        #region Relations
+
+            public List<Project.Project> Projects { get; set; }
+            
+        #endregion
     }
 }

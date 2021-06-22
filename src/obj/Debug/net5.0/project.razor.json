@@ -15644,8 +15644,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/home/amin/Projects/Manawork/src/Views/Home/Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FilePath": "/home/amin/Projects/Manawork/src/Views/Project/Create.cshtml",
+      "TargetPath": "Views\\Project\\Create.cshtml",
       "FileKind": "mvc"
     },
     {

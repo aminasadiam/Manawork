@@ -1,0 +1,19 @@
+@model  Manawork.DTOs.Projects.AddProjectViewModel
+@{
+    ViewData["Title"] = "Create New Project";
+}
+
+<form asp-controller="Project" asp-action="Create" method="post">
+    <div class="form-group">
+        <label>Title</label>
+        <input type="text" asp-for="Title" >
+        <span asp-validation-for="Title"></span>
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <textarea rows="4" asp-for="Description"></textarea>
+        <span asp-validation-for="Description"></span>
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>

@@ -9,5 +9,6 @@ namespace Manawork.Services.Interfaces
         bool IsEmailExist(string email);
         void AddUser(User user);
         User LoginUser(LoginViewModel model);
+        int GetUserIdByEmail(string email);
     }
 }

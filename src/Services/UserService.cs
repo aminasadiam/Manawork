@@ -22,6 +22,11 @@ namespace Manawork.Services
             _context.SaveChanges();
         }
 
+        public int GetUserIdByEmail(string email)
+        {
+            return _context.Users.First(u => u.Email == email).UserId;
+        }
+
         public bool IsEmailExist(string email)
         {
             return _context.Users.Any(u => u.Email == email);

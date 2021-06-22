@@ -6,24 +6,22 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using Manawork.Models;
+using Manawork.Services.Interfaces;
 
 namespace Manawork.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        IProjectService _projectService;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, IProjectService projectService)
         {
             _logger = logger;
+            _projectService = projectService;
         }
 
-        public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult Privacy()
+        public IActionResult Index(int pageId, string search)
         {
             return View();
         }

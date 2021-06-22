@@ -36,6 +36,7 @@ namespace Manawork
             #region IoC
 
                 services.AddTransient<IUserService, UserService>();
+                services.AddTransient<IProjectService, ProjectService>();
 
             #endregion
 

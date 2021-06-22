@@ -72,3 +72,5 @@
 /home/amin/Projects/Manawork/src/obj/Debug/net5.0/Razor/Views/User/Login.cshtml.g.cs
 /home/amin/Projects/Manawork/src/obj/Debug/net5.0/Razor/Views/User/Register.cshtml.g.cs
 /home/amin/Projects/Manawork/src/obj/Debug/net5.0/Razor/Views/Project/Create.cshtml.g.cs
+/home/amin/Projects/Manawork/src/obj/Debug/net5.0/Razor/Views/Shared/_ProjectBox.cshtml.g.cs
+/home/amin/Projects/Manawork/src/obj/Debug/net5.0/Razor/Views/Project/Kanban.cshtml.g.cs

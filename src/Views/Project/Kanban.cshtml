@@ -1,0 +1,47 @@
+@model Manawork.Models.Project.Project
+@{
+    ViewData["Title"] = @Model.Title;
+}
+
+<div class="app">
+  <div class="kanban">
+    <div class="kanban-container">
+      <div class="kanban-column">
+        <div class="kanban-column-header">
+          To Do
+          <a href="#"><span>&#43;</span></a>
+        </div>
+        <ul class="kanban-column-list">
+          <li class="card">Card</li>
+          <li class="card">Card</li>
+          <li class="card">Card</li>
+          <li class="card">Card</li>
+        </ul>
+      </div>
+      <div class="kanban-column">
+        <div class="kanban-column-header">
+          In Process
+          <a href="#"><span>&#43;</span></a>
+        </div>
+        <ul class="kanban-column-list">
+          <li class="card">Card</li>
+          <li class="card">Card</li>
+          <li class="card">Card</li>
+          <li class="card">Card</li>
+        </ul>
+      </div>
+      <div class="kanban-column">
+        <div class="kanban-column-header">
+          Done
+          <a href="#"><span>&#43;</span></a>
+        </div>
+        <ul class="kanban-column-list">
+          <li class="card">Card</li>
+          <li class="card">Card</li>
+          <li class="card">Card</li>
+          <li class="card">Card</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

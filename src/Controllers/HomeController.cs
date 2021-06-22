@@ -23,7 +23,7 @@ namespace Manawork.Controllers
 
         public IActionResult Index(int pageId, string search)
         {
-            return View();
+            return View(_projectService.GetProjects());
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

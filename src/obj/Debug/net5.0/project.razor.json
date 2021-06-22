@@ -15629,6 +15629,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/amin/Projects/Manawork/src/Views/Project/Kanban.cshtml",
+      "TargetPath": "Views\\Project\\Kanban.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/amin/Projects/Manawork/src/Views/Shared/_ValidationScriptsPartial.cshtml",
       "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
       "FileKind": "mvc"
@@ -15656,6 +15661,11 @@
     {
       "FilePath": "/home/amin/Projects/Manawork/src/Views/User/Register.cshtml",
       "TargetPath": "Views\\User\\Register.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/amin/Projects/Manawork/src/Views/Shared/_ProjectBox.cshtml",
+      "TargetPath": "Views\\Shared\\_ProjectBox.cshtml",
       "FileKind": "mvc"
     },
     {

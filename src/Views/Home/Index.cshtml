@@ -1,6 +1,12 @@
-﻿@{
+﻿@model IEnumerable<Manawork.DTOs.Projects.ShowProjectsViewModel>
+@{
     ViewData["Title"] = "Home Page";
 }
 
 <a class="btn btn-success" asp-controller="Project" asp-action="Create">New Project</a>
 <hr />
+
+@foreach (var item in Model)
+{
+    <partial name="_ProjectBox" model="item" />
+}

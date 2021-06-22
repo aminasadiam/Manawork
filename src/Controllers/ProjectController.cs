@@ -18,6 +18,12 @@ namespace Manawork.Controllers
             _userService = userService;
         }
 
+        [Route("/Project/Kanban/{id}")]
+        public IActionResult Kanban(int id)
+        {
+            return View(_projectService.GetProjectById(id));
+        }
+
         public IActionResult Create() => View();
 
         [HttpPost]

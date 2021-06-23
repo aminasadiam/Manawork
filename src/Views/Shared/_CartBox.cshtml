@@ -1,0 +1,8 @@
+@model Manawork.Models.Project.Cart
+
+<li class="card">
+    @Model.Name
+
+    <a href="/Project/GoToNextLevel/@Model.CartId">Go</a>
+    <a href="/Project/DeleteCart/@Model.CartId">Delete</a>
+</li>

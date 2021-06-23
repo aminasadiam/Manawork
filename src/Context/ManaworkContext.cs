@@ -12,5 +12,18 @@ namespace Manawork.Contxet
         public DbSet<User> Users { get; set; }
         public DbSet<Project> Projects { get; set; }
         public DbSet<Cart> Carts { get; set; }
+
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Cart>()
+                .HasQueryFilter(c => !c.IsDelete);
+
+            modelBuilder.Entity<Project>()
+                .HasQueryFilter(p => !p.IsDelete);
+
+            modelBuilder.Entity<User>()
+                .HasQueryFilter(u => !u.IsDelete);
+        }
     }
 }

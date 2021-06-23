@@ -9,37 +9,41 @@
       <div class="kanban-column">
         <div class="kanban-column-header">
           To Do
-          <a href="#"><span>&#43;</span></a>
+          <a href="/Project/AddCart/@Model.ProjectId"><span>&#43;</span></a>
         </div>
         <ul class="kanban-column-list">
-          <li class="card">Card</li>
-          <li class="card">Card</li>
-          <li class="card">Card</li>
-          <li class="card">Card</li>
+          
+          @foreach (var todo in (IEnumerable<Manawork.Models.Project.Cart>)ViewData["TodoCarts"])
+          {
+              <partial name="_CartBox" model="todo" />
+          }
+
         </ul>
       </div>
       <div class="kanban-column">
         <div class="kanban-column-header">
           In Process
-          <a href="#"><span>&#43;</span></a>
         </div>
         <ul class="kanban-column-list">
-          <li class="card">Card</li>
-          <li class="card">Card</li>
-          <li class="card">Card</li>
-          <li class="card">Card</li>
+          
+          @foreach (var inProcess in (IEnumerable<Manawork.Models.Project.Cart>)ViewData["InProcessCarts"])
+          {
+              <partial name="_CartBox" model="inProcess" />
+          }
+
         </ul>
       </div>
       <div class="kanban-column">
         <div class="kanban-column-header">
           Done
-          <a href="#"><span>&#43;</span></a>
         </div>
         <ul class="kanban-column-list">
-          <li class="card">Card</li>
-          <li class="card">Card</li>
-          <li class="card">Card</li>
-          <li class="card">Card</li>
+          
+          @foreach (var done in (IEnumerable<Manawork.Models.Project.Cart>)ViewData["DoneCarts"])
+          {
+              <partial name="_CartBox" model="done" />
+          }
+
         </ul>
       </div>
     </div>

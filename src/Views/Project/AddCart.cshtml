@@ -1,0 +1,14 @@
+@model Manawork.DTOs.Projects.AddCartViewModel
+@{
+    ViewData["Title"] = "New ToDo";
+}
+
+<form asp-controller="Project" asp-action="AddCart" method="post">
+    <input type="hidden" asp-for="ProjectId" value="@ViewBag.ProjectId">
+    <div class="form-group">
+        <label>Name</label>
+        <input type="text" asp-for="Name" >
+        <span asp-validation-for="Name"></span>
+    </div>
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>

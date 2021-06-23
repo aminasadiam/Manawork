@@ -15629,6 +15629,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/home/amin/Projects/Manawork/src/Views/Project/AddCart.cshtml",
+      "TargetPath": "Views\\Project\\AddCart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/amin/Projects/Manawork/src/Views/Project/Kanban.cshtml",
       "TargetPath": "Views\\Project\\Kanban.cshtml",
       "FileKind": "mvc"
@@ -15646,6 +15651,11 @@
     {
       "FilePath": "/home/amin/Projects/Manawork/src/Views/_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/home/amin/Projects/Manawork/src/Views/Shared/_CartBox.cshtml",
+      "TargetPath": "Views\\Shared\\_CartBox.cshtml",
       "FileKind": "mvc"
     },
     {

@@ -4,7 +4,7 @@ a Simple Kanban Board written using C# / Asp.net Core 5
 # Usage
 - install dotnet sdk
 - Clone 'https://github.com/aminasadiam/Manawork'
-- Go to Src
+- Go to Src : `cd Manawork/src`
 - Edit ConnectionString in 'appsetting.json'
 - Create Database : `dotnet ef database update`
 - Run App : `dotnet run`

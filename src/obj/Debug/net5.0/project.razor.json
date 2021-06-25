@@ -15619,6 +15619,11 @@
   "RootNamespace": "Manawork",
   "Documents": [
     {
+      "FilePath": "/home/amin/Projects/Manawork/src/Views/Project/EditProject.cshtml",
+      "TargetPath": "Views\\Project\\EditProject.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/home/amin/Projects/Manawork/src/Views/User/Login.cshtml",
       "TargetPath": "Views\\User\\Login.cshtml",
       "FileKind": "mvc"

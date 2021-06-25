@@ -68,7 +68,7 @@ namespace Manawork.Controllers
         }
 
         [HttpPost]
-        public IActionResult Login(LoginViewModel model)
+        public IActionResult Login(LoginViewModel model, string ReturnUrl = "")
         {
             if (!ModelState.IsValid)
             {
@@ -93,6 +93,11 @@ namespace Manawork.Controllers
                 };
 
                 HttpContext.SignInAsync(principal, properties);
+
+                if (ReturnUrl != "")
+                {
+                    return Redirect(ReturnUrl);
+                }
 
                 return Redirect("/");
             }

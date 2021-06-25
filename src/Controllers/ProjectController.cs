@@ -109,5 +109,24 @@ namespace Manawork.Controllers
             _projectService.UpdateProject(project);
             return Redirect("/");
         }
+
+        public IActionResult EditProject(int id)
+        {
+            var project = _projectService.GetProjectById(id);
+            return View(project);
+        }
+
+        [HttpPost]
+        public IActionResult EditProject(Project model)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(model);
+            }
+
+            _projectService.UpdateProject(model);
+
+            return Redirect("/");
+        }
     }
 }
